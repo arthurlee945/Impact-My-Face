@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         velocityXHash = Animator.StringToHash("Velocity X");
         velocityZHash = Animator.StringToHash("Velocity Z");
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -85,5 +84,9 @@ public class PlayerMovement : MonoBehaviour
             }
             velocity += (velocity > 0f ? -1 : 1) * Time.deltaTime * deceleration;
         }
+    }
+    void RotatePlayerRelativeToCamera(float verticalMovement, float horizontalMovement)
+    {
+
     }
 }
