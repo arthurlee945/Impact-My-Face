@@ -7,6 +7,12 @@ public class PlayerAction : MonoBehaviour
     [SerializeField]
     [Range(0f, 10f)]
     private float rotationSpeed = 2.5f;
+
+    private Animator animator;
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         

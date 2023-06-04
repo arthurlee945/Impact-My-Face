@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private float velocityZ = 0f;
     int velocityZHash, velocityXHash;
     [SerializeField]
-    float acceleration = 30f;
+    float acceleration = 4f;
     [SerializeField]
-    float deceleration = 30f;
+    float deceleration = 4f;
     [SerializeField]
     float maximumRunVelocity = 1.5f;
     [SerializeField]
