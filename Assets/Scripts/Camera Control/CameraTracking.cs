@@ -6,7 +6,8 @@ public class CameraTracking : MonoBehaviour
 {
     [SerializeField]
     private Transform player;
-
+    [SerializeField]
+    private float AngleY = 1f;
     private Vector3 offset;
     void Awake()
     {
@@ -14,7 +15,8 @@ public class CameraTracking : MonoBehaviour
     }
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     void LateUpdate()
@@ -25,6 +27,6 @@ public class CameraTracking : MonoBehaviour
     {
         float targetYAngle = player.eulerAngles.y;
         transform.position = player.position + (Quaternion.Euler(0, targetYAngle + 1, 0) * offset);
-        transform.LookAt(player.transform.position + new Vector3(0, 1f, 0));
+        transform.LookAt(player.transform.position + new Vector3(0, AngleY, 0));
     }
 }

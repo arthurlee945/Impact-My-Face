@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
-    private Rigidbody rb;
     private float velocityX = 0f;
     private float velocityZ = 0f;
     int velocityZHash, velocityXHash;
@@ -20,12 +19,10 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
         velocityXHash = Animator.StringToHash("Velocity X");
         velocityZHash = Animator.StringToHash("Velocity Z");
     }
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
         float verticalMovement = Input.GetAxis("Vertical");
         float horizontalMovement = Input.GetAxis("Horizontal");
@@ -39,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
 
         //player movement
         AddPlayerMovement(verticalDirection, horizontalDirection, currentMaxVelocity);
+    }
+
+    void FixedUpdate()
+    {
+
     }
     void AddPlayerMovement(float verticalMovement , float horizontalMovement, float speed )
     {
