@@ -87,8 +87,4 @@ public class PlayerMovement : MonoBehaviour
             velocity += (velocity > 0f ? -1 : 1) * Time.deltaTime * deceleration;
         }
     }
-    void RotatePlayerRelativeToCamera(float verticalMovement, float horizontalMovement)
-    {
-
-    }
 }
