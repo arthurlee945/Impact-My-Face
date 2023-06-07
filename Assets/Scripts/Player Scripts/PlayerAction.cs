@@ -61,4 +61,12 @@ public class PlayerAction : MonoBehaviour
         }
         lastMouseXPos = mousePos.x;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "Player")
+            return;
+        Debug.Log(collision.collider);
+        Debug.Log(collision.impulse);
+        Debug.Log(collision.articulationBody);
+    }
 }

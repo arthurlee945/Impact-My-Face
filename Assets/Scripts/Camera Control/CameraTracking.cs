@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraTracking : MonoBehaviour
 {
     [SerializeField]
-    private Transform player;
+    public Transform player;
     [SerializeField]
     private float AngleY = 1f;
     private Vector3 offset;
