@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,9 @@ public class PlayerAction : MonoBehaviour
     [Range(0f, 10f)]
     private float rotationSpeed = 2.5f;
     private float lastMouseXPos = 0;
+
+    public Collider leftFist;
+    public Collider rightFist;
 
     private void Awake()
     {
@@ -65,8 +69,5 @@ public class PlayerAction : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
             return;
-        Debug.Log(collision.collider);
-        Debug.Log(collision.impulse);
-        Debug.Log(collision.articulationBody);
     }
 }
