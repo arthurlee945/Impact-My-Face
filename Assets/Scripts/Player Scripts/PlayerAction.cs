@@ -67,7 +67,8 @@ public class PlayerAction : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag != "Player" || (collision.GetContact(0).thisCollider.name != leftFist.name && collision.GetContact(0).thisCollider.name != rightFist.name))
             return;
+        Debug.Log("ascascsac");
     }
 }
