@@ -13743,6 +13743,36 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 65
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -13780,7 +13810,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -13828,7 +13858,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -13857,6 +13887,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.5
         value: 0.06
+        inSlope: -0.225
+        outSlope: -0.225
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -13867,7 +13906,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -13942,7 +13981,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -13999,7 +14038,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -14092,7 +14131,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -14111,27 +14150,6 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.6
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Arthur_LeftHand
-    classID: 135
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -14139,21 +14157,12 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.6
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
-    classID: 65
+    path: Player_LeftHand
+    classID: 135
     script: {fileID: 0}
     flags: 0
   m_PPtrCurves: []
@@ -14165,19 +14174,19 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 4172599752
+      path: 0
       attribute: 3305885265
       script: {fileID: 0}
-      typeID: 135
+      typeID: 65
       customType: 0
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 946310162
       attribute: 3305885265
       script: {fileID: 0}
-      typeID: 65
+      typeID: 135
       customType: 0
       isPPtrCurve: 0
       isIntCurve: 0
@@ -14930,7 +14939,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 605858901
       script: {fileID: 0}
       typeID: 136
@@ -14939,7 +14948,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 136
@@ -14948,7 +14957,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 3390229881
       script: {fileID: 0}
       typeID: 136
@@ -14957,7 +14966,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4172599752
+      path: 946310162
       attribute: 605858901
       script: {fileID: 0}
       typeID: 135
@@ -14966,7 +14975,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4172599752
+      path: 946310162
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 135
@@ -14975,7 +14984,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4172599752
+      path: 946310162
       attribute: 3390229881
       script: {fileID: 0}
       typeID: 135
@@ -29154,6 +29163,36 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
+    classID: 65
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -29191,7 +29230,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -29239,7 +29278,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -29268,6 +29307,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.5
         value: 0.06
+        inSlope: -0.225
+        outSlope: -0.225
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -29278,7 +29326,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -29353,7 +29401,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -29410,7 +29458,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -29503,7 +29551,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_LeftHand
+    path: Player_LeftHand
     classID: 135
     script: {fileID: 0}
     flags: 0
@@ -29522,27 +29570,6 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 0.6
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Arthur_LeftHand
-    classID: 135
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -29550,21 +29577,12 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.6
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
-    classID: 65
+    path: Player_LeftHand
+    classID: 135
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves: []
