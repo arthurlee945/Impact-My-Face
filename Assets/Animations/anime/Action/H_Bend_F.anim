@@ -11602,7 +11602,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -11632,7 +11632,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -11662,7 +11662,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -11918,7 +11918,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 1394318531
       script: {fileID: 0}
       typeID: 136
@@ -11927,7 +11927,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 3390229881
       script: {fileID: 0}
       typeID: 136
@@ -12863,7 +12863,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1153467987
+      path: 591889990
       attribute: 605858901
       script: {fileID: 0}
       typeID: 136
@@ -24478,7 +24478,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.x
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -24508,7 +24508,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.y
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0
@@ -24538,7 +24538,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Center.z
-    path: Arthur_Head
+    path: Player_Head
     classID: 136
     script: {fileID: 0}
     flags: 0

@@ -1,17 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
     Animator animator;
     int rotationHash, postureX, postureY, jab, hook, isLeftPunch;
+    string activePunch;
+    float lastMouseXPos = 0;
+    bool punchStarted = false;
+
 
     [SerializeField]
     [Range(0f, 10f)]
     private float rotationSpeed = 2.5f;
-    private float lastMouseXPos = 0;
+
 
     public Collider leftFist;
     public Collider rightFist;
@@ -29,14 +34,18 @@ public class PlayerAction : MonoBehaviour
     private void Update()
     {
         float horizontal = Input.GetAxis("Mouse X");
+
         updatePlayerPosture();
         rotatePlayer(horizontal);
+  
         if (Input.GetMouseButtonDown(0))
         {
+            activePunch = animator.GetBool(isLeftPunch) ?  "jab" : "strongPunch";
             animator.SetTrigger(jab);
         }
         if (Input.GetMouseButtonDown(1))
         {
+            activePunch = "hook";
             animator.SetTrigger(hook);
         }
     }
@@ -51,7 +60,7 @@ public class PlayerAction : MonoBehaviour
     }
     void updatePlayerPosture()
     {
-        Vector2 mousePos =(((Vector2)Input.mousePosition - new Vector2(Screen.width / 2, Screen.height / 2)) / new Vector2(Screen.width, Screen.height))*2;
+        Vector2 mousePos = (((Vector2)Input.mousePosition - new Vector2(Screen.width / 2, Screen.height / 2)) / new Vector2(Screen.width, Screen.height)) * 2;
         animator.SetFloat(postureX, Mathf.Clamp(mousePos.x, -0.5f, 0.5f));
         animator.SetFloat(postureY, Mathf.Clamp(mousePos.y, -0.5f, 0.5f));
 
@@ -67,8 +76,22 @@ public class PlayerAction : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Player" || (collision.GetContact(0).thisCollider.name != leftFist.name && collision.GetContact(0).thisCollider.name != rightFist.name))
+        if (collision.gameObject.tag != "Player" 
+            || collision.GetContact(0).thisCollider.tag != "Fist" || punchStarted)
             return;
-        Debug.Log("ascascsac");
+        punchStarted = true;
+        AudioManager.Instance.PunchSound(activePunch);
+        if (collision.GetContact(0).otherCollider.tag != "Target")
+        {
+            return;
+        }
+
+
+    }
+
+
+    private void PunchAnimationFinished()
+    {
+        punchStarted = false;
     }
 }

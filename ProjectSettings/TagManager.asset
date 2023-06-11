@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Target
   - Fist
+  - Player2Cam
+  - Player1Cam
   layers:
   - Default
   - TransparentFX

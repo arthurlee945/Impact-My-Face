@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 5735513080594650457}
   - component: {fileID: 3716925812889929803}
   m_Layer: 0
-  m_Name: Arthur_Ankle_R
+  m_Name: Player_Ankle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3361692902972812017}
   - component: {fileID: 2112933318923432388}
   m_Layer: 0
-  m_Name: Arthur_Head
+  m_Name: Player_Head
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 9206701141983897443}
   - component: {fileID: 7526032439676009427}
   m_Layer: 0
-  m_Name: Arthur_EyeLeft
+  m_Name: Player_EyeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 3180973448101980239}
   - component: {fileID: 6223694689580107174}
   m_Layer: 0
-  m_Name: Arthur_Ankle_L
+  m_Name: Player_Ankle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,8 +966,8 @@ GameObject:
   - component: {fileID: 1373731703835101350}
   - component: {fileID: 6774927026535300157}
   m_Layer: 0
-  m_Name: Arthur_RightHand
-  m_TagString: Untagged
+  m_Name: Player_RightHand
+  m_TagString: Fist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 6623731891094036450}
   - component: {fileID: 63843211158575788}
   m_Layer: 0
-  m_Name: Arthur_EyeRight
+  m_Name: Player_EyeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 6493440515836804375}
   - component: {fileID: 7578412516823411611}
   m_Layer: 0
-  m_Name: Arthur_Hair
+  m_Name: Player_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2661,7 +2661,7 @@ GameObject:
   - component: {fileID: 5508287489880312358}
   - component: {fileID: 5001636241502806891}
   m_Layer: 0
-  m_Name: Arthur_Teeth
+  m_Name: Player_Teeth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2816,7 +2816,7 @@ GameObject:
   - component: {fileID: 5477271081399807018}
   - component: {fileID: 1006813404473444633}
   m_Layer: 0
-  m_Name: Arthur_Foot_L
+  m_Name: Player_Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3053,8 +3053,8 @@ GameObject:
   - component: {fileID: 5295525311914097615}
   - component: {fileID: 8656888555375622098}
   m_Layer: 0
-  m_Name: Arthur_LeftHand
-  m_TagString: Untagged
+  m_Name: Player_LeftHand
+  m_TagString: Fist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3352,8 +3352,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6624095627816357142}
-  - component: {fileID: 8147752129339025649}
   - component: {fileID: 940600535655618412}
+  - component: {fileID: 8147752129339025649}
   - component: {fileID: 3368584722335220756}
   - component: {fileID: 3191427857411073876}
   - component: {fileID: 6314185038668811770}
@@ -3371,7 +3371,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5811423956066244524}
-  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3391,8 +3391,29 @@ Transform:
   - {fileID: 8272719957107465190}
   - {fileID: 5508287489880312358}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &940600535655618412
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811423956066244524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0130fdd33d291c34fb9606c091b4062c, type: 3}
+  m_Controller: {fileID: 9100000, guid: e53f904e44ba83a469f1e2f23c1a49cf, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &8147752129339025649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3418,29 +3439,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 2
---- !u!95 &940600535655618412
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5811423956066244524}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0130fdd33d291c34fb9606c091b4062c, type: 3}
-  m_Controller: {fileID: 9100000, guid: e53f904e44ba83a469f1e2f23c1a49cf, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3368584722335220756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3491,8 +3491,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43, y: 0.58, z: 0.18}
-  m_Center: {x: 0, y: 1.09, z: 0.25}
+  m_Size: {x: 0.35, y: 0.45, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0.2}
 --- !u!1 &5977007695542969723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,7 +3990,7 @@ GameObject:
   - component: {fileID: 8572254717328735827}
   - component: {fileID: 7640993106915791420}
   m_Layer: 0
-  m_Name: Arthur_Foot_R
+  m_Name: Player_Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4512,9 +4512,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1720865226896350092}
   - component: {fileID: 1705284875606260926}
+  - component: {fileID: 2820591373641159234}
   m_Layer: 0
-  m_Name: Arthur_Outfit_Bottom
-  m_TagString: Untagged
+  m_Name: Player_Outfit_Bottom
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4654,6 +4655,27 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000001071021, y: -0.004559579, z: 0.00008127128}
     m_Extent: {x: 0.0021653404, y: 0.0055318666, z: 0.0014841171}
   m_DirtyAABB: 0
+--- !u!65 &2820591373641159234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593063199685530481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.37, y: 0.82, z: 0.27}
+  m_Center: {x: 0, y: 0.53, z: 0}
 --- !u!1 &8672279085428461038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,7 +4751,7 @@ GameObject:
   - component: {fileID: 5260127918974190923}
   - component: {fileID: 3995708033017537586}
   m_Layer: 0
-  m_Name: Arthur_Outfit_Top
+  m_Name: Player_Outfit_Top
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4890,7 +4912,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.37, y: 0.56, z: 0.29}
-  m_Center: {x: 0.000113289294, y: 1.1, z: -0.0048838947}
+  m_Center: {x: 0.000113289294, y: 1, z: -0.0048838947}
 --- !u!1 &9039206073742884143
 GameObject:
   m_ObjectHideFlags: 0
