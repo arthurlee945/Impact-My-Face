@@ -10,7 +10,7 @@ public class PlayerAction : MonoBehaviour
     int rotationHash, postureX, postureY, jab, hook, isLeftPunch;
     string activePunch;
     float lastMouseXPos = 0;
-    bool punchStarted = false;
+    public bool punchStarted = false;
 
 
     [SerializeField]
@@ -77,21 +77,12 @@ public class PlayerAction : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "Player" 
-            || collision.GetContact(0).thisCollider.tag != "Fist" || punchStarted)
+            || collision.GetContact(0).thisCollider.tag != "Fist" )
             return;
-        punchStarted = true;
         AudioManager.Instance.PunchSound(activePunch);
         if (collision.GetContact(0).otherCollider.tag != "Target")
         {
             return;
         }
-
-
-    }
-
-
-    private void PunchAnimationFinished()
-    {
-        punchStarted = false;
     }
 }

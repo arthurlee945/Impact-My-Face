@@ -745,7 +745,7 @@ Transform:
   - {fileID: 8104279198819448108}
   - {fileID: 1820459106289814067}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5632081608302313167
 Animator:
@@ -1400,6 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4880353207341235048}
   - component: {fileID: 4842027068717167265}
+  - component: {fileID: 3383244168405129043}
   m_Layer: 0
   m_Name: Player_Head
   m_TagString: Target
@@ -1544,6 +1545,29 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000006594928, y: 0.0055238265, z: 0.00036879233}
     m_Extent: {x: 0.0009125486, y: 0.0016942226, z: 0.0013932405}
   m_DirtyAABB: 0
+--- !u!136 &3383244168405129043
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791634010076289824}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.125
+  m_Height: 0.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.57, z: 0}
 --- !u!1 &2812114772192218589
 GameObject:
   m_ObjectHideFlags: 0
