@@ -25,17 +25,6 @@ public class PlayerBehavior : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //bool forwardPressed = Input.GetKey(KeyCode.W);
-        //bool runForwardPressed = Input.GetKey(KeyCode.LeftShift);
-        //if (forwardPressed)
-        //{
-        //    velocity += Time.deltaTime * acceleration;
-        //}
-        //animator.SetFloat("Velocity", velocity);
-    }
     void MovementController()
     {
         bool forwardPressed = Input.GetKey(KeyCode.W);

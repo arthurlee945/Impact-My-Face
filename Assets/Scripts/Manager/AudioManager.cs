@@ -24,17 +24,23 @@ public sealed class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
     }
-    public void PunchSound(string type)
+    public void PunchSound(string type, bool isGuarded = false)
     {
         switch (type)
         {
             case "jab":
+                jab.volume = isGuarded ? 0.225f : 0.35f;
+                jab.pitch = isGuarded ? 0.8f :1 ;
                 jab.Play();
                 break;
             case "hook":
+                hook.volume = isGuarded ? 0.225f : 0.35f;
+                hook.pitch = isGuarded ? 0.8f : 1;
                 hook.Play();
                 break;
             case "strongPunch":
+                strongPunch.volume = isGuarded ? 0.225f : 0.35f;
+                strongPunch.pitch = isGuarded ? 0.8f : 1;
                 strongPunch.Play();
                 break;
             case "boom":

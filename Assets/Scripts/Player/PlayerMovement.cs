@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private float velocityX = 0f;
     private float velocityZ = 0f;
+    private string playerName;
     int velocityZHash, velocityXHash;
     [SerializeField]
     float acceleration = 4f;
@@ -21,12 +22,14 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         velocityXHash = Animator.StringToHash("Velocity X");
         velocityZHash = Animator.StringToHash("Velocity Z");
+        playerName = gameObject.transform.parent.name;
     }
     private void Update()
     {
-        float verticalMovement = Input.GetAxis("Vertical");
-        float horizontalMovement = Input.GetAxis("Horizontal");
-        bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        float verticalMovement = Input.GetAxis(playerName == "Player1" ? "Vertical_P1" : "Vertical_P2");
+        float horizontalMovement = Input.GetAxis(playerName == "Player1" ? "Horizontal_P1" : "Horizontal_P2");
+        //bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        bool runPressed = Input.GetButton(playerName == "Player1" ? "Sprint_P1": "Sprint_P2");
         //Direction and max velocity for animation
         float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
         float verticalDirection = verticalMovement > 0 ? 1 : verticalMovement < 0 ? -1 : 0;
@@ -38,10 +41,6 @@ public class PlayerMovement : MonoBehaviour
         AddPlayerMovement(verticalDirection, horizontalDirection, currentMaxVelocity);
     }
 
-    void FixedUpdate()
-    {
-
-    }
     void AddPlayerMovement(float verticalMovement , float horizontalMovement, float speed )
     {
         verticalMovement *= Time.deltaTime * speed * 2;

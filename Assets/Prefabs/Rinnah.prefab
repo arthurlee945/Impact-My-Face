@@ -711,7 +711,6 @@ GameObject:
   - component: {fileID: 4774578102738231433}
   - component: {fileID: 1319771335082320239}
   - component: {fileID: 8771172440424671739}
-  - component: {fileID: 8861100203288718187}
   m_Layer: 0
   m_Name: Rinnah
   m_TagString: Player
@@ -745,7 +744,7 @@ Transform:
   - {fileID: 8104279198819448108}
   - {fileID: 1820459106289814067}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5632081608302313167
 Animator:
@@ -802,7 +801,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405914843362573839}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746b61501913a9b499b0dc365149b616, type: 3}
   m_Name: 
@@ -818,35 +817,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405914843362573839}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 407eb86a8c11e16408186c01da82c274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  punchStarted: 0
+  IsGuarding: 0
   rotationSpeed: 2.5
   leftFist: {fileID: 5883003443176052413}
   rightFist: {fileID: 2711156939072096924}
---- !u!65 &8861100203288718187
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405914843362573839}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.35, y: 0.45, z: 0.1}
-  m_Center: {x: 0, y: 1, z: 0.2}
 --- !u!1 &1457447740222981538
 GameObject:
   m_ObjectHideFlags: 0

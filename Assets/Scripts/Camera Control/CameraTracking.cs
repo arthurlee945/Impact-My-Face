@@ -17,8 +17,8 @@ public class CameraTracking : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = false;
         StartCoroutine(AssignPlayer());
     }
 

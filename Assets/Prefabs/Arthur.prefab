@@ -3356,7 +3356,6 @@ GameObject:
   - component: {fileID: 8147752129339025649}
   - component: {fileID: 3368584722335220756}
   - component: {fileID: 3191427857411073876}
-  - component: {fileID: 6314185038668811770}
   m_Layer: 0
   m_Name: Arthur
   m_TagString: Player
@@ -3391,7 +3390,7 @@ Transform:
   - {fileID: 8272719957107465190}
   - {fileID: 5508287489880312358}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &940600535655618412
 Animator:
@@ -3469,30 +3468,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407eb86a8c11e16408186c01da82c274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  punchStarted: 0
+  IsGuarding: 0
   rotationSpeed: 2.5
   leftFist: {fileID: 8656888555375622098}
   rightFist: {fileID: 6774927026535300157}
---- !u!65 &6314185038668811770
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5811423956066244524}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.35, y: 0.45, z: 0.1}
-  m_Center: {x: 0, y: 1, z: 0.2}
 --- !u!1 &5977007695542969723
 GameObject:
   m_ObjectHideFlags: 0
