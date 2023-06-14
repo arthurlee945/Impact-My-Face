@@ -3356,6 +3356,7 @@ GameObject:
   - component: {fileID: 8147752129339025649}
   - component: {fileID: 3368584722335220756}
   - component: {fileID: 3191427857411073876}
+  - component: {fileID: 8567765735603460858}
   m_Layer: 0
   m_Name: Arthur
   m_TagString: Player
@@ -3390,7 +3391,7 @@ Transform:
   - {fileID: 8272719957107465190}
   - {fileID: 5508287489880312358}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &940600535655618412
 Animator:
@@ -3470,9 +3471,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchStarted: 0
   IsGuarding: 0
-  rotationSpeed: 2.5
   leftFist: {fileID: 8656888555375622098}
   rightFist: {fileID: 6774927026535300157}
+--- !u!114 &8567765735603460858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811423956066244524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 7933aa5113d96cb46bb0c7d36014a42d, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3368584722335220756}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9276cba6-f15b-4de8-b50d-946000a85a11
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 04dea825-2821-4741-b7fe-ac01e41deb33
+    m_ActionName: Player/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6304dc5d-a9d2-409a-81f0-4c5b69db8adc
+    m_ActionName: Player/AngleControl[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a0ec6136-0268-4c1d-b708-c2203de7cba6
+    m_ActionName: Player/Guarding[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 50e5fd5c-8547-4ea0-bd5c-6c2b4694a3a2
+    m_ActionName: Player/Regular_P[/Mouse/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 046124ad-0f20-4a13-a967-861da7a629ea
+    m_ActionName: Player/Strong_P[/Mouse/rightButton]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Controller
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &5977007695542969723
 GameObject:
   m_ObjectHideFlags: 0

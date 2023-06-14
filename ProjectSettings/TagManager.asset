@@ -8,6 +8,7 @@ TagManager:
   - Fist
   - Player2Cam
   - Player1Cam
+  - BroadCastCam
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public sealed class GameManager : MonoBehaviour
 
     private Dictionary<string, GameObject> characters = new Dictionary<string,GameObject>();
     public GameObject SelectedPlayer1, SelectedPlayer2;
-    public int Player1Health, Player2Health;
+    public float Player1Health, Player2Health;
     public bool GameOver = false;
     private void Awake()
     {
@@ -33,10 +33,6 @@ public sealed class GameManager : MonoBehaviour
     private void Start()
     {
         StartGame();
-    }
-    private void Update()
-    {
-
     }
     private void StartGame()
     {

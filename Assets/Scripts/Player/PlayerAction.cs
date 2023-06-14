@@ -1,23 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Animations;
+using UnityEngine.Windows;
 
 public class PlayerAction : MonoBehaviour
 {
+    PlayerInput input;
+    PlayerControlSchema controls;
     Animator animator;
     int rotationHash, postureX, postureY, jab, hook, isLeftPunch;
     string activePunch;
     float lastMouseXPos = 0;
     string playerName;
+    Vector2 AngleControl;
 
     public bool punchStarted = false;
     public bool IsGuarding = false;
+    private bool isRegularPunch = false;
+    private bool isStrongPunch = false;
 
-
-    [SerializeField]
-    [Range(0f, 10f)]
     private float rotationSpeed = 1.5f;
 
     public Collider leftFist;
@@ -25,6 +26,7 @@ public class PlayerAction : MonoBehaviour
 
     private void Awake()
     {
+        input = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         rotationHash = Animator.StringToHash("Rotation");
         postureX = Animator.StringToHash("Posture X");
@@ -33,6 +35,18 @@ public class PlayerAction : MonoBehaviour
         hook = Animator.StringToHash("Hook");
         isLeftPunch = Animator.StringToHash("IsLeftPunch");
         this.playerName = gameObject.transform.parent.name;
+
+        input.defaultControlScheme = playerName == "Player1" ? "Controller" : "Keyboard";
+        controls = new PlayerControlSchema();
+        controls.Enable();
+        controls.Player.AngleControl.performed += ctx => AngleControl = ctx.ReadValue<Vector2>();
+        controls.Player.AngleControl.canceled += ctx => AngleControl = Vector2.zero;
+        controls.Player.Guarding.performed += ctx => IsGuarding = true;
+        controls.Player.Guarding.canceled += ctx => IsGuarding = false;
+        controls.Player.Regular_P.performed += ctx => isRegularPunch = true;
+        controls.Player.Regular_P.canceled += ctx => isRegularPunch = false;
+        controls.Player.Strong_P.performed += ctx => isStrongPunch = true;
+        controls.Player.Strong_P.canceled += ctx => isStrongPunch = false;
     }
     private void Update()
     {
@@ -40,29 +54,19 @@ public class PlayerAction : MonoBehaviour
         float horizontal = Input.GetAxis(playerName == "Player1" ? "JoyStickX_P1" : "JoyStickX_P2");
         float vertical = Input.GetAxis(playerName == "Player1" ? "JoyStickY_P1" : "JoyStickY_P2");
         
-        updatePlayerPostureWJoystick(horizontal, vertical);
-        rotatePlayer(horizontal);
-        if (Input.GetButtonDown(playerName == "Player1" ? "R1_P1": "R1_P2"))
+        updatePlayerPostureWJoystick(AngleControl.x, AngleControl.y);
+        rotatePlayer(AngleControl.x);
+        if (isRegularPunch)
         {
             activePunch = animator.GetBool(isLeftPunch) ? "jab" : "strongPunch";
             animator.SetTrigger(jab);
         }
-        if (Input.GetButtonDown(playerName == "Player1" ? "R2_P1" : "R2_P2"))
+        if (isStrongPunch)
         {
             activePunch = "hook";
             animator.SetTrigger(hook);
         }
-        if (Input.GetButtonDown(playerName == "Player1" ? "Guard_P1": "Guard_P2"))
-        {
-            IsGuarding = true;
-            animator.SetLayerWeight(2, 1f);
-        }
-        if (Input.GetButtonUp(playerName == "Player1" ? "Guard_P1" : "Guard_P2"))
-        {
-            IsGuarding = false;
-            animator.SetLayerWeight(2, 0f);
-        }
-
+        animator.SetLayerWeight(2, IsGuarding? 1f : 0f);
     }
     void FixedUpdate()
     {
@@ -136,4 +140,5 @@ public class PlayerAction : MonoBehaviour
     {
         gameObject.GetComponent<Animator>().SetLayerWeight(3, 0f);
     }
+
 }

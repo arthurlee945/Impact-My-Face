@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 4774578102738231433}
   - component: {fileID: 1319771335082320239}
   - component: {fileID: 8771172440424671739}
+  - component: {fileID: 2021596589159965905}
   m_Layer: 0
   m_Name: Rinnah
   m_TagString: Player
@@ -744,7 +745,7 @@ Transform:
   - {fileID: 8104279198819448108}
   - {fileID: 1820459106289814067}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5632081608302313167
 Animator:
@@ -824,9 +825,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchStarted: 0
   IsGuarding: 0
-  rotationSpeed: 2.5
   leftFist: {fileID: 5883003443176052413}
   rightFist: {fileID: 2711156939072096924}
+--- !u!114 &2021596589159965905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405914843362573839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 7933aa5113d96cb46bb0c7d36014a42d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1457447740222981538
 GameObject:
   m_ObjectHideFlags: 0

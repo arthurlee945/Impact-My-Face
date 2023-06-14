@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    PlayerInput input;
+    PlayerControlSchema controls;
     private Animator animator;
     private float velocityX = 0f;
     private float velocityZ = 0f;
@@ -17,30 +21,44 @@ public class PlayerMovement : MonoBehaviour
     float maximumRunVelocity = 1.5f;
     [SerializeField]
     float maximumWalkVelocity = 0.5f;
+    private Vector2 movement = new Vector2();
+    bool isRunning = false;
     private void Awake()
     {
+        input = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         velocityXHash = Animator.StringToHash("Velocity X");
         velocityZHash = Animator.StringToHash("Velocity Z");
         playerName = gameObject.transform.parent.name;
+
+   
+        controls = new PlayerControlSchema();
+        controls.Enable();
+        input.defaultControlScheme = playerName == "Player1" ? "Controller" : "Keyboard";
+        controls.Player.Movement.performed += ctx => movement = ctx.ReadValue<Vector2>();
+        controls.Player.Movement.canceled += ctx => movement = Vector2.zero;
+        controls.Player.Sprint.performed += ctx => isRunning = true;
+        controls.Player.Sprint.canceled += ctx => isRunning = false;
+
     }
     private void Update()
     {
-        float verticalMovement = Input.GetAxis(playerName == "Player1" ? "Vertical_P1" : "Vertical_P2");
-        float horizontalMovement = Input.GetAxis(playerName == "Player1" ? "Horizontal_P1" : "Horizontal_P2");
         //bool runPressed = Input.GetKey(KeyCode.LeftShift);
         bool runPressed = Input.GetButton(playerName == "Player1" ? "Sprint_P1": "Sprint_P2");
         //Direction and max velocity for animation
-        float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
-        float verticalDirection = verticalMovement > 0 ? 1 : verticalMovement < 0 ? -1 : 0;
-        float horizontalDirection = horizontalMovement > 0 ? 1 : horizontalMovement < 0 ? -1 : 0;
-        //animation renderww
+        float currentMaxVelocity = isRunning ? maximumRunVelocity : maximumWalkVelocity;
+        float verticalDirection = movement.y;
+        float horizontalDirection = movement.x;
+        //animation render
         AnimationRenderer(verticalDirection, horizontalDirection, currentMaxVelocity);
 
         //player movement
         AddPlayerMovement(verticalDirection, horizontalDirection, currentMaxVelocity);
     }
-
+    private void Movement_Performed(InputAction.CallbackContext ctx)
+    {
+        Debug.Log(ctx);
+    }
     void AddPlayerMovement(float verticalMovement , float horizontalMovement, float speed )
     {
         verticalMovement *= Time.deltaTime * speed * 2;
@@ -85,5 +103,13 @@ public class PlayerMovement : MonoBehaviour
             }
             velocity += (velocity > 0f ? -1 : 1) * Time.deltaTime * deceleration;
         }
+    }
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        movement = ctx.ReadValue<Vector2>();
+    }
+    public void OnSprint(InputAction.CallbackContext ctx)
+    {
+        isRunning = ctx.action.triggered;
     }
 }
